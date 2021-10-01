@@ -10,11 +10,11 @@ public class Main {
     public static void main(String[] args) {
         int[] nums1 = new int[]{-4,-1,0,3,10};
         int[] ans1 = sortedSquares(nums1);
-        System.out.println(ans1);
+        System.out.println(Arrays.toString(ans1));
 
         int[] nums2 = new int[]{-7,-3,2,3,11};
         int[] ans2 = sortedSquares(nums2);
-        System.out.println(ans2);
+        System.out.println(Arrays.toString(ans2));
     }
 
         public static int[] sortedSquares(int[] nums) {
