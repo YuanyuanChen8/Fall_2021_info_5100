@@ -4,33 +4,29 @@ import java.util.*;
 public class Main {
     public static void main(String[] args){
 
+
     }
+
     public boolean canConstruct(String ransomNote, String magazine) {
-        HashMap<Character, Integer> map = new HashMap<>();
-
-        for (int i = 0; i < ransomNote.length(); i++) {
-            char ch = ransomNote.charAt(i);
-
-            int newF = map.getOrDefault(ch, 0) + 1;
-            map.put(ch, newF);
-        }
-
-        for (int i = 0; i < magazine.length(); i++) {
-            char ch = magazine.charAt(i);
-
-            if (map.containsKey(ch) && map.get(ch)>0) {
-                map.put(ch, map.get(ch) - 1);
-            } else {
-                continue;
+        boolean ret = true;
+        byte[] bytes = new byte[magazine.length()];
+        for (int m = 0; m < ransomNote.length(); m++) {
+            char c = ransomNote.charAt(m);
+            boolean found = false;
+            for (int n = 0; n < magazine.length(); n++) {
+                if (bytes[n] == 0 && magazine.charAt(n) == c) {
+                    bytes[n]++;
+                    found = true;
+                    break;
+                }
+            }
+            if (!found) {
+                ret = false;
+                break;
             }
         }
-
-        for (int val : map.values()) {
-            if (val != 0) {
-                return false;
-            }
-        }
-
-        return true;
+        return ret;
     }
+
 }
+
