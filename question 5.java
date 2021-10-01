@@ -18,10 +18,10 @@ public class Main {
             m = Character.isDigit(Result.charAt(i));
             n = Character.isDigit(Result.charAt(i + 1));
             if (m == n){
-                return false;
+                return true;
             }
         }
-        return true;
+        return false;
     }
 }
 
