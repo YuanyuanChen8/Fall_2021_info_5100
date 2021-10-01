@@ -1,36 +1,28 @@
 package com.company;
 
+import java.util.Arrays;
+
 public class Main {
     public Main(){
 
     }
 
     public static void main(String[] args) {
-        int[] nums = new int[]{1,2};
-        int[] ans = sortedSquares(nums);
-        System.out.println(ans);
+        int[] nums1 = new int[]{-4,-1,0,3,10};
+        int[] ans1 = sortedSquares(nums1);
+        System.out.println(ans1);
 
+        int[] nums2 = new int[]{-7,-3,2,3,11};
+        int[] ans2 = sortedSquares(nums2);
+        System.out.println(ans2);
     }
 
         public static int[] sortedSquares(int[] nums) {
-
-            int low=0,high=nums.length-1,k=nums.length-1;
-            int arr[] = new int[nums.length];
-
-            while(low<=high)
-            {
-                if(Math.abs(nums[low])>=Math.abs(nums[high]))
-                {
-                    arr[k] = nums[low]*nums[low];
-                    low++;
-                }
-                else{
-                    arr[k] = nums[high]*nums[high];
-                    high--;
-                }
-                k-=1;
+            for (int i = 0;i < nums.length;i++){
+                nums[i] = nums[i]* nums[i];
             }
-            return arr;
+            Arrays.sort(nums);
+            return nums;
 
         }
 }
