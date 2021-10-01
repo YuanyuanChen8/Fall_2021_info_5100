@@ -18,11 +18,12 @@ public class Main {
     }
 
         public static int[] sortedSquares(int[] nums) {
-            for (int i = 0;i < nums.length;i++){
-                nums[i] = nums[i]* nums[i];
+            int[] ans = new int[nums.length];
+            for (int i = 0; i < nums.length; ++i){
+                ans[i] = nums[i]* nums[i];
             }
-            Arrays.sort(nums);
-            return nums;
+            Arrays.sort(ans);
+            return ans;
 
         }
 }
