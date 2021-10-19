@@ -1,8 +1,6 @@
 package com.company;
 
 public class Q1 {
-
-
     public static int[][] transpose(int[][] matrix) {
         int m = matrix.length;
         int n = matrix[0].length;

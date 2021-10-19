@@ -6,7 +6,6 @@ import java.util.List;
 
 public class Q2 {
 
-
     public int shorteestDistance(String[] words, String word1, String word2){
         List<Integer> list1 = new ArrayList<>();
         List<Integer> list2 = new ArrayList<>();
@@ -30,22 +29,4 @@ public class Q2 {
         return size;
     }
 
-
-
-
-//记录两个单词所有出现的位置，并全部求差，取最小值即可。
-
-    public int shortestDistance(String[] words, String word1, String word2) {
-        int minDistance = words.length;
-        for (int i = 0; i < words.length; i++) {
-            if (words[i].equals(word1)) {
-                for (int j = 0; j < words.length; j++) {
-                    if (words[j].equals(word2)) {
-                        minDistance = Math.min(minDistance, Math.abs(i - j));
-                    }
-                }
-            }
-        }
-        return minDistance;
-    }
 }

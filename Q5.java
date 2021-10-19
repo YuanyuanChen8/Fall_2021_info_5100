@@ -4,50 +4,48 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Q5 {
-
-    public List<Integer> spiralOder(int[][] matrix) {
+    public List<Integer> spiralOrder(int[][] matrix) {
         List<Integer> result = new ArrayList<>();
-        int rows = matrix.length, columns = matrix[0].length;
-
+        int rowNumber = matrix.length, colNumber = matrix[0].length;
         if (matrix == null || matrix.length == 0 || matrix[0].length == 0)
             return result;
-        int top = 0, right = columns - 1, bottom = rows - 1, left = 0;
-        while (result.size() < rows * columns) {
-            //left to right
-            for (int col = left; col <= right; col++) {
-                result.add(matrix[top][col]);
-            }
-            top++;
-        }
-        if (result.size() < rows * columns) {
-            //top to bottom
-            for (int row = top; row <= bottom; row++) {
-                result.add(matrix[row][right]);
-            }
-            right--;
-        }
 
-        if (result.size() < rows * columns) {
-            //right to left
-            for (int row = right; row >= left; row--) {
-                result.add(matrix[bottom][row]);
-            }
-            bottom--;
+        int top = 0, right = colNumber - 1, bottom = rowNumber - 1, left = 0;
 
-        }
-        if (result.size() < rows * columns) {
-            //bottom to top
+        while (result.size() < rowNumber * colNumber) {
+            // buttom to top
             for (int col = bottom; col >= top; col--) {
                 result.add(matrix[col][left]);
             }
             left++;
+
+            // left to right
+            if (result.size() < rowNumber * colNumber) {
+                for (int col = left; col <= right; col++) {
+                    result.add(matrix[top][col]);
+                }
+                top++;
+            }
+            // top to buttom
+            if (result.size() < rowNumber * colNumber) {
+                for (int row = top; row <= bottom; row++) {
+                    result.add(matrix[row][right]);
+                }
+                right--;
+            }
+
+            // right to left
+            if (result.size() < rowNumber * colNumber) {
+                for (int row = right; row >= left; row--) {
+                    result.add(matrix[bottom][row]);
+                }
+                bottom--;
+            }
         }
         return result;
     }
 
 }
-
-
 
 
 
