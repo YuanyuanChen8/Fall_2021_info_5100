@@ -4,7 +4,7 @@ public class Q3 {
 
 
     public void moveZeroes(int[] nums){
-        int index = -1;
+        int index = 0;
         for(int i = 0;i < nums.length;i++){
             int now = nums[i];
             if (now != 0) {
